@@ -26,15 +26,17 @@ const slideInAndOut = keyframes`
 `;
 
 const StyledSlogan = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   animation: ${fadeIn} 2s ease-in-out;
   z-index: 150;
-  color: var(--color-grey-0);
+  color: var(--color-grey-400);
   font-weight: 500;
   text-align: center;
-  width: 65%;
-  padding-bottom: 4rem;
-  margin-top: 16rem;
+  max-width: 750px;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+  padding: 1rem 1rem;
+  border-left: 2px solid #e6b905;
 
   @media (max-width: 900px) {
     font-size: 2rem;
@@ -47,6 +49,8 @@ const CenteredContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 const Button = styled.a`
@@ -80,13 +84,49 @@ const StyledArrow = styled(ImArrowDown)`
   animation: ${fadeIn} 2s ease-in-out;
 `;
 
+const Title = styled.h1`
+  font-size: 8rem;
+  color: var(--color-grey-0);
+  position: relative;
+  z-index: 150;
+  text-align: center;
+  margin-top: 14rem;
+  line-height: 1;
+  max-width: 900px;
+  animation: ${fadeIn} 2s ease-in-out;
+`;
+
+const Features = styled.div`
+  position: relative;
+  z-index: 150;
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 3rem;
+  color: var(--color-grey-200);
+  animation: ${fadeIn} 2s ease-in-out;
+`;
+
+const FeatureItem = styled.p`
+  &:not(:last-child)::after {
+    content: "|";
+    margin-left: 0.5rem;
+  }
+`;
+
 function Slogan() {
   return (
     <CenteredContainer>
+      <Title>Professional DVC PRO Transfer & Restoration</Title>
+      <Features>
+        <FeatureItem>Broadcast-Standard Digitization</FeatureItem>
+        <FeatureItem>AI-Enhanced Workflows</FeatureItem>
+        <FeatureItem>Enterprise Scale</FeatureItem>
+      </Features>
       <StyledSlogan>
-        {'"'}According to UNESCO, 200 million hours of video programmes are in
-        danger of being lost. Preserving one’s audiovisual heritage means
-        ensuring that it can be seen or heard today, tomorrow and forever.{'"'}
+        UNESCO estimates 200 million hours of video content face imminent loss
+        due to magnetic media degradation and playback equipment obsolescence.
+        Professional migration is no longer optional— it is urgent.
       </StyledSlogan>
       <Button href="#contact">Book Your Consultation</Button>
       <StyledArrow />
