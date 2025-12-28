@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Faq from "./FAQ";
 
 const data = [
   {
@@ -39,11 +40,25 @@ const data = [
 ];
 
 const AccordionWrapper = styled.div`
-  padding: 10rem;
+  padding: 15rem;
+  background-color: #031f82;
+
+  @media (max-width: 1000px) {
+    padding: 4rem;
+  }
+  @media (max-width: 600px) {
+    padding: 1rem;
+  }
 `;
 
 const StyledAccordion = styled.div`
   background-color: #fff;
+  padding: ${({ isLast }) => (isLast ? "0 5rem 8rem 5rem" : "0 5rem")};
+
+  @media (max-width: 1200px) {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
 
   button {
     width: 100%;
@@ -52,10 +67,11 @@ const StyledAccordion = styled.div`
     justify-content: space-between;
     color: var(--color-brand-950);
     background-color: var(--color-grey-0);
-    padding: 1rem 0.6rem;
+    padding: 0.2rem 0.6rem;
     border: none;
     border-bottom: 1px solid var(--color-brand-700);
-    font-size: 3rem;
+    font-size: 1.9rem;
+    font-weight: 700;
     transition: background-color 0.5s, color 0.5s;
     cursor: pointer;
 
@@ -63,6 +79,15 @@ const StyledAccordion = styled.div`
       background-color: var(--color-brand-950);
       color: var(--color-brand-50);
     }
+
+    @media (max-width: 1268px) {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 1268px) {
+    font-size: 1.5rem;
   }
 
   span {
@@ -75,18 +100,20 @@ const AccordionAnswer = styled.div`
   padding: 0.5rem;
   font-size: 2rem;
   max-height: ${({ isOpen }) => (isOpen ? "500px" : "0")};
-  margin-bottom: ${({ isOpen }) => (isOpen ? "50px" : 0)};
+  padding-bottom: ${({ isOpen }) => (isOpen ? "20px" : "0")};
   transition: all 0.25s ease-in-out;
   overflow: hidden;
-`;
 
+  @media (max-width: 1268px) {
+    font-size: 1.5rem;
+  }
+`;
 function Accordion() {
   const [accordionOpen, setAccordionOpen] = useState(
     Array(data.length).fill(false)
   );
 
   const handleAccordionClick = (index) => {
-    // Shallow copy of array
     const updatedAccordionOpen = [...accordionOpen];
     updatedAccordionOpen[index] = !updatedAccordionOpen[index];
     setAccordionOpen(updatedAccordionOpen);
@@ -94,8 +121,9 @@ function Accordion() {
 
   return (
     <AccordionWrapper>
+      <Faq />
       {data.map((item, index) => (
-        <StyledAccordion key={index}>
+        <StyledAccordion key={index} isLast={index === data.length - 1}>
           <button onClick={() => handleAccordionClick(index)}>
             <div>{item.question}</div>
             {accordionOpen[index] ? <span>-</span> : <span>+</span>}

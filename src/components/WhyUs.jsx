@@ -4,7 +4,6 @@ import { FaPhotoVideo, FaRegLightbulb } from "react-icons/fa";
 
 import styled from "styled-components";
 import Header from "../ui/Header";
-import Subheader from "../ui/Subheader";
 
 const Wrapper = styled.div`
   margin-top: 5rem;
@@ -15,11 +14,25 @@ const Wrapper = styled.div`
   font-size: 10rem;
   color: var(--color-brand-950);
 
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    font-size: 7rem;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    font-size: 5rem;
+  }
+
   p {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     padding: 2rem;
-    color: var(--color-grey-900);
+    color: var(--color-grey-950);
+    font-weight: 700;
+
+    @media (max-width: 600px) {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -28,39 +41,37 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  padding: 2rem;
+  padding: 1rem;
 `;
+
 function WhyUs() {
   return (
     <>
       <Header>Our Core Services</Header>
-      <Subheader>AI powered solutions</Subheader>
       <Wrapper>
         <ContentContainer>
           <div>
             <PiCassetteTape />
           </div>
-          <p>Advanced AI-Powered Digitization of DVC PRO Tapes</p>
+          <p>Tape Digitalization</p>
         </ContentContainer>
         <ContentContainer>
           <div>
             <MdSpeed />
           </div>
-          <p>Speedy and Efficient Data Processing</p>
+          <p>Advanced AI Restoration</p>
         </ContentContainer>
         <ContentContainer>
           <div>
             <FaPhotoVideo />
           </div>
-          <p>End-to-End Video Processing Services</p>
+          <p>Digital Archiving Solutions</p>
         </ContentContainer>
         <ContentContainer>
           <div>
             <FaRegLightbulb />
           </div>
-          <p>
-            Customized Solutions Catering to Broadcaster and Educational Needs
-          </p>
+          <p>Post-Production Services</p>
         </ContentContainer>
       </Wrapper>
     </>

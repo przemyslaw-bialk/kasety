@@ -1,31 +1,61 @@
 import styled from "styled-components";
-import Header from "../ui/Header";
-import Subheader from "../ui/Subheader";
 import emailjs from "emailjs-com";
-import { useRef } from "react";
-import contact from "../assets/contact.jpg";
+import { useRef, useState } from "react";
+import contact from "../assets/photo1.jpg";
 
 const FormWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: stretch;
-  margin-top: 5rem;
+  gap: 3rem;
+  position: relative;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const FormContainer = styled.div`
+  position: relative;
+  margin-top: 4rem;
+
+  ::before {
+    content: "Tapes Transfer .com";
+    width: 150px;
+    height: 150px;
+    border-radius: 220px;
+    border: 5px solid #fff;
+    padding: 4rem;
+    background-color: #00247d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-20%);
+    color: #fff;
+    overflow: hidden;
+    font-size: 2.4rem;
+    padding: 3rem;
+    font-weight: 700;
+    line-height: 1;
+  }
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0 1rem 0 3rem;
-
+  padding: 2rem 1rem 2rem 3rem;
+  background-color: #f1f1f1;
+  color: var(--color-text);
+  text-align: center;
+  margin-top: 5rem;
   input,
   textarea {
     padding: 1rem 1rem;
-    width: 97%;
-    border: none;
-    border-bottom: 2px solid var(--color-brand-200);
+    width: 100%;
+    border: 1px solid var(--color-grey-300);
     outline-color: var(--color-brand-200);
-    color: var(--color-brand-900);
+    color: var(--color-brand-950);
+    border-radius: 20px;
   }
 
   textarea {
@@ -33,45 +63,71 @@ const Form = styled.form`
   }
 
   ::placeholder {
-    color: var(--color-brand-900);
+    color: var(--color-grey-300);
+  }
+
+  h3 {
+    font-weight: 400;
+  }
+  h1 {
+    line-height: 1.3;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding-bottom: 3rem;
   }
 `;
 
 const SubmitFormButton = styled.input`
-  background-color: var(--color-brand-950);
-  color: var(--color-grey-50) !important;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #ffcd05;
+  color: var(--color-text) !important;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  font-weight: 400;
+  border-radius: 20px;
   transition: all 0.3s;
+  display: inline-block;
+  width: 50% !important;
+  cursor: pointer;
 
   &:hover {
-    background-color: var(--color-brand-900);
+    background: #e6b905;
   }
   &:active {
     transform: translateY(2px);
+  }
+
+  @media (max-width: 700px) {
+    width: 100% !important;
   }
 `;
 
 const BackgroundPhoto = styled.div`
   position: relative;
-  background: rgba(8, 3, 65, 0.949) url(${contact});
-  background-blend-mode: multiply;
+  background: url(${contact});
   background-size: cover;
   height: 100%;
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+`;
 
-  h2 {
-    color: var(--color-grey-50);
-    margin-bottom: 2rem;
-  }
+const PopupMessage = styled.div`
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  opacity: ${(props) => (props.show ? "1" : "0")};
+  visibility: ${(props) => (props.show ? "visible" : "hidden")};
+  transition: opacity 0.5s, visibility 0.5s;
 `;
 
 export const ContactUs = () => {
   const form = useRef();
+  const [popup, setPopup] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -87,6 +143,7 @@ export const ContactUs = () => {
         (result) => {
           console.log(result.text);
           form.current.reset();
+          showPopup();
         },
         (error) => {
           console.log(error.text);
@@ -94,48 +151,62 @@ export const ContactUs = () => {
       );
   };
 
+  const showPopup = () => {
+    setPopup(true);
+    setTimeout(() => {
+      setPopup(false);
+    }, 5000);
+  };
+
   return (
     <div id="contact">
-      <Header>Contact us</Header>
-      <Subheader>
-        Embark on a journey where history meets innovation. Contact
-        Tapestransfer.com to discuss your digital media transformation
-      </Subheader>
       <FormWrapper>
-        <BackgroundPhoto>
-          <h2>if you have any questions feel free to reach us</h2>
-          <p>email: contact@tapestransfer.com</p>
-          <p>phone: +48 500 500 689</p>
-        </BackgroundPhoto>
-        <Form onSubmit={handleSubmit} ref={form}>
-          <div>
-            <input type="text" placeholder="Name" name="name" required />
-          </div>
-          <div>
-            <input
-              type="email"
-              placeholder="Your email"
-              name="email"
-              required
-            />
-          </div>
-          <div>
-            <input type="text" placeholder="Subject" name="subject" required />
-          </div>
-          <div>
-            <textarea
-              cols="30"
-              rows="6"
-              placeholder="Your message"
-              name="message"
-              required
-            ></textarea>
-          </div>
-          <div>
-            <SubmitFormButton type="submit" value="send a message" disabled />
-          </div>
-        </Form>
+        <BackgroundPhoto></BackgroundPhoto>
+        <FormContainer>
+          <Form onSubmit={handleSubmit} ref={form}>
+            <h3>Contact Us</h3>
+            <h1>
+              Let{"'"}s talk about <br /> your project
+            </h1>
+            <p>
+              Drop us a line through the form below and we{"'"}ll get back to
+              you
+            </p>
+            <div>
+              <input type="text" placeholder="Name*" name="name" required />
+            </div>
+            <div>
+              <input
+                type="email"
+                placeholder="Your email*"
+                name="email"
+                required
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="Subject"
+                name="subject"
+                required
+              />
+            </div>
+            <div>
+              <textarea
+                cols="20"
+                rows="3"
+                placeholder="Your message*"
+                name="message"
+                required
+              ></textarea>
+            </div>
+            <div>
+              <SubmitFormButton type="submit" value="Book Your Consultation" />
+            </div>
+          </Form>
+        </FormContainer>
       </FormWrapper>
+      <PopupMessage show={popup}>Message sent successfully!</PopupMessage>
     </div>
   );
 };

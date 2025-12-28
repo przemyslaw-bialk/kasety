@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { ImArrowDown } from "react-icons/im";
 
 const fadeIn = keyframes`
   from {
@@ -25,25 +26,19 @@ const slideInAndOut = keyframes`
 `;
 
 const StyledSlogan = styled.h1`
-  letter-spacing: 7px;
-  font-size: 5rem;
+  font-size: 3rem;
   animation: ${fadeIn} 2s ease-in-out;
   z-index: 150;
-  color: var(--color-grey-300);
-  text-transform: uppercase;
-  font-weight: 900;
-`;
+  color: var(--color-grey-0);
+  font-weight: 500;
+  text-align: center;
+  width: 65%;
+  padding-bottom: 4rem;
+  margin-top: 16rem;
 
-const StyledCompanyName = styled.p`
-  letter-spacing: 5px;
-  font-weight: 700;
-  font-size: 5.4rem;
-  padding: 1rem 3rem 1rem 1rem;
-  animation: ${fadeIn} 2s ease-in-out forwards;
-  opacity: 0;
-  letter-spacing: 7px;
-  z-index: 150;
-  color: var(--color-brand-900);
+  @media (max-width: 900px) {
+    font-size: 2rem;
+  }
 `;
 
 const CenteredContainer = styled.div`
@@ -51,40 +46,50 @@ const CenteredContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  height: 90vh;
+  height: 100vh;
 `;
 
 const Button = styled.a`
-  background: transparent;
-  border: 3px solid var(--color-brand-700);
-  font-size: 3.6rem;
-  padding: 1rem 8rem;
-  color: var(--color-brand-600);
-  letter-spacing: 5px;
-  font-weight: 500;
+  background: #ffcd05;
+  color: var(--color-text);
+  border: none;
+  font-size: 3rem;
+  padding: 1rem 5rem;
+  font-weight: 400;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s;
   z-index: 150;
-  margin-top: 5rem;
-  box-shadow: 0px 5px 100px 51px rgba(20 0 190 / 67%);
-  text-transform: uppercase;
+  margin-top: 2rem;
   animation: ${slideInAndOut} 1.8s ease-in-out;
 
   &:hover {
-    border-color: var(--color-brand-800);
-    color: var(--color-brand-700);
+    background: #e6b905;
   }
+
+  @media (max-width: 900px) {
+    font-size: 2.5rem;
+  }
+`;
+
+const StyledArrow = styled(ImArrowDown)`
+  color: var(--color-brand-900);
+  font-size: 10rem;
+  margin-top: 5rem;
+  z-index: 150;
+  animation: ${fadeIn} 2s ease-in-out;
 `;
 
 function Slogan() {
   return (
     <CenteredContainer>
       <StyledSlogan>
-        {'"'}Your Stories, Our Expertise{'"'}
+        {'"'}According to UNESCO, 200 million hours of video programmes are in
+        danger of being lost. Preserving one’s audiovisual heritage means
+        ensuring that it can be seen or heard today, tomorrow and forever.{'"'}
       </StyledSlogan>
-      <StyledCompanyName>TapesTransfer.com</StyledCompanyName>
-      <Button href="#about">our offer</Button>
+      <Button href="#contact">Book Your Consultation</Button>
+      <StyledArrow />
     </CenteredContainer>
   );
 }

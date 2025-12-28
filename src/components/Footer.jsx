@@ -1,14 +1,20 @@
-import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-
 import styled from "styled-components";
+import { CiMail } from "react-icons/ci";
 
 const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 3rem 1rem;
+  justify-content: space-between;
+  margin: 2rem 1rem 1rem 1rem;
   color: var(--color-brand-950);
+  padding: 2rem 0 0;
+  border-top: 1px solid var(--color-brand-950);
+
+  @media (max-width: 900px) {
+    font-size: 1.4rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
   a {
     font-size: 2rem;
@@ -20,25 +26,37 @@ const StyledFooter = styled.footer`
   }
 `;
 
+const Mail = styled.a`
+  font-size: 1.6rem !important;
+  font-family: inherit;
+
+  @media (max-width: 900px) {
+    font-size: 1rem !important;
+  }
+`;
+
+const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+`;
+
 function Footer() {
   return (
     <StyledFooter>
-      <p>meet us on socials</p>
-      <div>
-        <a href="https://react-icons.github.io/react-icons/search/#q=instagram">
-          <FaLinkedinIn />
-        </a>
-      </div>
-      <div>
-        <a href="https://react-icons.github.io/react-icons/search/#q=instagram">
-          <FaInstagram />
-        </a>
-      </div>
-      <div>
-        <a href="https://react-icons.github.io/react-icons/search/#q=instagram">
-          <FaFacebookF />
-        </a>
-      </div>
+      <p>TapesTransfer.com - all rights reserved &#169;</p>
+
+      <Flex>
+        <CiMail />
+
+        <Mail
+          href="mailto:contact@tapestransfer.com
+"
+        >
+          contact@tapestransfer.com
+        </Mail>
+      </Flex>
     </StyledFooter>
   );
 }

@@ -4,22 +4,31 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const StyledMenu = styled.ul`
   position: absolute;
   width: 100%;
-  height: 5rem;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 2rem;
-  padding: 1.3rem;
+  justify-content: space-between;
+  padding: 2rem;
   text-transform: uppercase;
   z-index: 300;
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+
+  h2 {
+    font-size: 2.6rem;
+    color: var(--color-grey-0);
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
 `;
 
 const StyledMenuItem = styled.li`
-  padding-right: 2rem;
-  border-right: 2px solid var(--color-brand-800);
   a {
-    color: var(--color-grey-300);
-    font-size: 1.5rem;
+    color: var(--color-grey-0);
+    font-size: 2rem;
   }
 
   a:hover {
@@ -27,31 +36,34 @@ const StyledMenuItem = styled.li`
   }
 `;
 
-const LanguageSwitcherWrapper = styled.div`
-  margin-left: auto;
+const WrapperMenu = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-right: 12rem;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+  }
 `;
 
 function Menu() {
   return (
     <StyledMenu>
-      <StyledMenuItem>
-        <a href="#services">service</a>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <a href="#about">about us</a>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <a href="#">projects</a>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <a href="#faq">FAQ</a>
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <a href="#contact">contact</a>
-      </StyledMenuItem>
-      <LanguageSwitcherWrapper>
-        <LanguageSwitcher />
-      </LanguageSwitcherWrapper>
+      <h2>TapesTransfer.com</h2>
+      <WrapperMenu>
+        <StyledMenuItem>
+          <a href="#services">services</a>
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <a href="#services">about us</a>
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <a href="#contact">contact</a>
+        </StyledMenuItem>
+      </WrapperMenu>
+      <LanguageSwitcher />
     </StyledMenu>
   );
 }

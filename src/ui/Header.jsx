@@ -4,8 +4,17 @@ import styled from "styled-components";
 const StyledHeader = styled.h2`
   font-size: 6rem;
   color: var(--color-brand-950);
-  margin-top: 5rem;
+  margin-top: 8rem;
   text-align: center;
+  text-transform: uppercase;
+
+  @media (max-width: 900px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 4rem;
+  }
 `;
 
 function Header({ children }) {

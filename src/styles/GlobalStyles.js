@@ -99,7 +99,6 @@ a {
 
 a:hover {
    
-    color: var(--color-test);
     transition: all 0.3s;
 }
 

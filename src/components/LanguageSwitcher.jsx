@@ -1,23 +1,29 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import german from "../assets/german.png";
+import english from "../assets/english.png";
 
 const LanguageButton = styled.button`
-  background-color: var(--color-brand-600);
   border: none;
-  color: var(--color-grey-100);
-  padding: 0.5rem 1rem;
-  box-shadow: -2px 0px 36px -6px rgba(157, 159, 180, 1);
-  &:hover {
-    background-color: var(--color-brand-700);
-  }
-  &:active {
-    scale: 0.97;
-  }
 `;
 
+const GermanFlag = styled.img`
+  width: 50px;
+  height: 25px;
+  display: block;
+`;
+const EnglishFlag = styled.img`
+  width: 50px;
+  height: 25px;
+  display: block;
+`;
 const Switcher = styled.div`
   display: flex;
-  gap: 0.6rem;
+  gap: 1rem;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 function LanguageSwitcher() {
@@ -30,10 +36,10 @@ function LanguageSwitcher() {
   return (
     <Switcher>
       <LanguageButton onClick={() => changeLanguage("en")}>
-        English
+        <EnglishFlag src={english} />
       </LanguageButton>
       <LanguageButton onClick={() => changeLanguage("de")}>
-        German
+        <GermanFlag src={german} />
       </LanguageButton>
     </Switcher>
   );
