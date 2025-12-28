@@ -20,10 +20,9 @@ const EnglishFlag = styled.img`
 const Switcher = styled.div`
   display: flex;
   gap: 1rem;
-
-  @media (max-width: 1000px) {
-    display: none;
-  }
+  position: absolute;
+  top: 2;
+  right: 1rem;
 `;
 
 function LanguageSwitcher() {

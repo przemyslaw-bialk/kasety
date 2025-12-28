@@ -14,6 +14,7 @@ const resources = {
       slogan:
         "UNESCO estimates 200 million hours of video content face imminent loss due to magnetic media degradation and playback equipment obsolescence. Professional migration is no longer optional— it is urgent.",
       button: "Book Your Consultation",
+      menu: ["Services", "Capabilities", "Contact"],
     },
   },
   //------------------------------------------GERMAN----------------------------------//
@@ -29,13 +30,14 @@ const resources = {
       slogan:
         "Die UNESCO schätzt, dass 200 Millionen Stunden Videoinhalte aufgrund der Degradation magnetischer Medien und der Überalterung von Abspielgeräten unmittelbar vom Verlust bedroht sind. Professionelle Migration ist nicht mehr optional—sie ist dringend erforderlich.",
       button: "Buchen Sie Ihre Beratung",
+      menu: ["Dienstleistungen", "Fähigkeiten", "Kontakt"],
     },
   },
 };
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en", // Default language
+  lng: "en", // default language
   interpolation: {
     escapeValue: false,
   },
