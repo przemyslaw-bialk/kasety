@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { ImArrowDown } from "react-icons/im";
+import { useTranslation } from "react-i18next";
 
 const fadeIn = keyframes`
   from {
@@ -115,20 +116,17 @@ const FeatureItem = styled.p`
 `;
 
 function Slogan() {
+  const { t } = useTranslation();
   return (
     <CenteredContainer>
-      <Title>Professional DVC PRO Transfer & Restoration</Title>
+      <Title>{t("title")}</Title>
       <Features>
-        <FeatureItem>Broadcast-Standard Digitization</FeatureItem>
-        <FeatureItem>AI-Enhanced Workflows</FeatureItem>
-        <FeatureItem>Enterprise Scale</FeatureItem>
+        {t("features", { returnObjects: true }).map((feature, index) => (
+          <FeatureItem key={index}>{feature}</FeatureItem>
+        ))}
       </Features>
-      <StyledSlogan>
-        UNESCO estimates 200 million hours of video content face imminent loss
-        due to magnetic media degradation and playback equipment obsolescence.
-        Professional migration is no longer optional— it is urgent.
-      </StyledSlogan>
-      <Button href="#contact">Book Your Consultation</Button>
+      <StyledSlogan>{t("slogan")}</StyledSlogan>
+      <Button href="#contact">{t("button")}</Button>
       <StyledArrow />
     </CenteredContainer>
   );
