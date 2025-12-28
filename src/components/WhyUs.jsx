@@ -4,6 +4,7 @@ import { GiCompactDisc } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
 import { FiDatabase } from "react-icons/fi";
 import { LiaPhotoVideoSolid } from "react-icons/lia";
+import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
   margin-top: 15rem;
@@ -53,7 +54,6 @@ const Card = styled.div`
 const CardLogo = styled.span`
   display: block;
   font-size: 4rem;
-  color: #00ff00;
 `;
 
 const CardHeader = styled.h4`
@@ -68,50 +68,47 @@ const CardText = styled.p`
 `;
 
 function WhyUs() {
+  const { t } = useTranslation();
+  const WHY_US_CARDS = [
+    {
+      icon: GiCompactDisc,
+      color: "#00ff00",
+      textKey: "card_title.0",
+      bodyKey: "card_text.0",
+    },
+    {
+      icon: BsStars,
+      color: "#20B1FF",
+      textKey: "card_title.1",
+      bodyKey: "card_text.1",
+    },
+    {
+      icon: FiDatabase,
+      color: "#FF5500",
+      textKey: "card_title.2",
+      bodyKey: "card_text.2",
+    },
+    {
+      icon: LiaPhotoVideoSolid,
+      color: "#FF208F",
+      textKey: "card_title.3",
+      bodyKey: "card_text.3",
+    },
+  ];
+
   return (
     <>
-      <Header>BROADCAST-GRADE SERVICES</Header>
+      <Header>{t("why_us_header")}</Header>
       <Wrapper>
-        <Card>
-          <CardLogo>
-            <GiCompactDisc />
-          </CardLogo>
-          <CardHeader>DVC PRO Digitization & Migration</CardHeader>
-          <CardText>
-            Professional ingest using calibrated broadcast equipment with
-            frame-accurate capture
-          </CardText>
-        </Card>
-        <Card>
-          <CardLogo style={{ color: "#20B1FF" }}>
-            <BsStars />
-          </CardLogo>
-          <CardHeader>AI-Powered Content Restoration</CardHeader>
-          <CardText>
-            Machine learning-based enhancement: temporal noise reduction,
-            upscaling, and color science workflows
-          </CardText>
-        </Card>
-        <Card>
-          <CardLogo style={{ color: "#FF5500" }}>
-            <FiDatabase />
-          </CardLogo>
-          <CardHeader>Digital Asset Management & Archival</CardHeader>
-          <CardText>
-            LTO/cloud hybrid archival strategies with metadata enrichment and
-            MAM integration
-          </CardText>
-        </Card>
-        <Card>
-          <CardLogo style={{ color: "#FF208F" }}>
-            <LiaPhotoVideoSolid />
-          </CardLogo>
-          <CardHeader>Broadcast Post-Production Services</CardHeader>
-          <CardText>
-            Professional ingest using calibrated broadcast equipment with
-            frame-accurate capture
-          </CardText>
-        </Card>
+        {WHY_US_CARDS.map(({ icon: Icon, color, textKey, bodyKey }, i) => (
+          <Card key={i}>
+            <CardLogo style={{ color }}>
+              <Icon />
+            </CardLogo>
+            <CardHeader>{t(textKey)}</CardHeader>
+            <CardText>{t(bodyKey)}</CardText>
+          </Card>
+        ))}
       </Wrapper>
     </>
   );
