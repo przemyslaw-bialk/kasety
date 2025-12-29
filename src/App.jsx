@@ -7,7 +7,7 @@ import HeroSection from "./components/HeroSection";
 
 import Accordion from "./components/Accordion";
 import CompanyService from "./components/CompanyService";
-import Parralax from "./components/Parralax";
+import OurNumbers from "./components/OurNumbers";
 
 import WhyUs from "./components/WhyUs";
 import { ContactUs } from "./components/ContactUs";
@@ -22,7 +22,7 @@ const App = () => {
         <HeroSection />
 
         <WhyUs />
-        <Parralax />
+        <OurNumbers />
 
         <CompanyService />
 
