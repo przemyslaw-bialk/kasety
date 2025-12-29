@@ -111,6 +111,40 @@ const BackgroundPhoto = styled.div`
   background: url(${contact});
   background-size: cover;
   height: 100%;
+  padding: 1rem;
+  color: #e6e9d5;
+  text-align: center;
+
+  & h4 {
+    font-size: 4rem;
+    color: #fff;
+    margin-top: 8rem;
+
+    @media (max-width: 900px) {
+      margin-top: 4rem;
+    }
+  }
+
+  & span {
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 8rem;
+  }
+
+  & a {
+    color: #ccd2c6;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    margin-bottom: 4rem;
+  }
+`;
+
+const ContactTextLeft = styled.p`
+  margin-top: 2rem;
+  color: #ccd2c6;
 `;
 
 const PopupMessage = styled.div`
@@ -164,7 +198,20 @@ export const ContactUs = () => {
   return (
     <div id="contact">
       <FormWrapper>
-        <BackgroundPhoto>test</BackgroundPhoto>
+        <BackgroundPhoto>
+          <h4>technical consultation</h4>
+          <p>Let{"'"}s discuss your digitization project</p>
+          <ContactTextLeft>
+            Complete the form below and our technical team will respond within
+            24 hours
+          </ContactTextLeft>
+          <p>
+            <span>Contact: </span>
+            <a href="mailto:contact@tapestransfer.com">
+              contact@tapestransfer.com
+            </a>
+          </p>
+        </BackgroundPhoto>
         <FormContainer>
           <Form onSubmit={handleSubmit} ref={form}>
             <h3>{t("contact_us")}</h3>
