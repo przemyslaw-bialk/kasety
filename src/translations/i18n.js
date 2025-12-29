@@ -28,6 +28,13 @@ const resources = {
         "LTO/cloud hybrid archival strategies with metadata enrichment and MAM integration",
         "Professional color grading, standards conversion, and delivery in all broadcast formats (ProRes, DNxHD, IMF)",
       ],
+      our_numbers: [
+        "hours/month digitization capacity",
+        "tapes migrated in 2024",
+        "years broadcast engineering",
+        "SMPTE-compliant workflows",
+      ],
+      number_heading: "Frame-accurate",
     },
   },
   //------------------------------------------GERMAN----------------------------------//
@@ -57,6 +64,13 @@ const resources = {
         "LTO/Cloud-Hybrid-Archivierungsstrategien mit Metadatenanreicherung und MAM-Integration",
         "Professionelle Farbkorrektur, Standardkonvertierung und Lieferung in allen Broadcast-Formaten (ProRes, DNxHD, IMF)",
       ],
+      our_numbers: [
+        "Stunden/Monat Digitalisierungskapazität",
+        "Bänder migriert in 2024",
+        "Jahre Broadcast-Engineering",
+        "SMPTE-konforme Workflows",
+      ],
+      number_heading: "Bildgenau",
     },
   },
 };

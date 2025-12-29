@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import photo from "../assets/photo3.jpg";
 import SlotCounter from "react-slot-counter";
+import { useTranslation } from "react-i18next";
 
 const StyledNumbers = styled.section`
   width: 100%;
   height: 75vh;
   margin-top: 10rem;
-
   background-image: url(${photo});
   background-size: cover;
   background-position: center;
@@ -72,6 +72,7 @@ const Text = styled.p`
 `;
 
 function OurNumbers() {
+  const { t } = useTranslation();
   return (
     <StyledNumbers>
       <Inner>
@@ -86,7 +87,7 @@ function OurNumbers() {
             />
             <span>+</span>
           </WrappNumbers>
-          <Text>hours/month digitization capacity</Text>
+          <Text>{t("our_numbers.0")}</Text>
         </WrapCard>
 
         <WrapCard>
@@ -100,7 +101,7 @@ function OurNumbers() {
             />
             <span>+</span>
           </WrappNumbers>
-          <Text>tapes migrated in 2024</Text>
+          <Text>{t("our_numbers.1")}</Text>
         </WrapCard>
 
         <WrapCard>
@@ -114,11 +115,11 @@ function OurNumbers() {
             />
             <span>+</span>
           </WrappNumbers>
-          <Text>years broadcast engineering</Text>
+          <Text>{t("our_numbers.2")}</Text>
         </WrapCard>
         <WrapCard>
-          <h4>Frame-accurate</h4>
-          <Text>SMPTE-compliant workflows</Text>
+          <h4>{t("number_heading")}</h4>
+          <Text>{t("our_numbers.3")}</Text>
         </WrapCard>
       </Inner>
     </StyledNumbers>
