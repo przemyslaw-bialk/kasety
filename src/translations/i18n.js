@@ -35,6 +35,10 @@ const resources = {
         "SMPTE-compliant workflows",
       ],
       number_heading: "Frame-accurate",
+      contact_us: "Contact Us",
+      contact_heading: "Let's talk about <br/> your project",
+      contact_subheading:
+        "Drop us a line through the form below and we'll get back to you",
     },
   },
   //------------------------------------------GERMAN----------------------------------//
@@ -71,6 +75,10 @@ const resources = {
         "SMPTE-konforme Workflows",
       ],
       number_heading: "Bildgenau",
+      contact_us: "Kontakt",
+      contact_heading: "Lassen Sie uns über Ihr Projekt sprechen",
+      contact_subheading:
+        "Schreiben Sie uns über das untenstehende Formular – wir melden uns zeitnah bei Ihnen",
     },
   },
 };

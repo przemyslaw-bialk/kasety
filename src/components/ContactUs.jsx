@@ -2,6 +2,8 @@ import styled from "styled-components";
 import emailjs from "emailjs-com";
 import { useRef, useState } from "react";
 import contact from "../assets/photo1.jpg";
+import { useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 
 const FormWrapper = styled.div`
   display: grid;
@@ -126,6 +128,7 @@ const PopupMessage = styled.div`
 `;
 
 export const ContactUs = () => {
+  const { t } = useTranslation();
   const form = useRef();
   const [popup, setPopup] = useState(false);
 
@@ -161,17 +164,14 @@ export const ContactUs = () => {
   return (
     <div id="contact">
       <FormWrapper>
-        <BackgroundPhoto></BackgroundPhoto>
+        <BackgroundPhoto>test</BackgroundPhoto>
         <FormContainer>
           <Form onSubmit={handleSubmit} ref={form}>
-            <h3>Contact Us</h3>
+            <h3>{t("contact_us")}</h3>
             <h1>
-              Let{"'"}s talk about <br /> your project
+              <Trans i18nKey="contact_heading" />
             </h1>
-            <p>
-              Drop us a line through the form below and we{"'"}ll get back to
-              you
-            </p>
+            <p>{t("contact_subheading")}</p>
             <div>
               <input type="text" placeholder="Name*" name="name" required />
             </div>
@@ -201,7 +201,7 @@ export const ContactUs = () => {
               ></textarea>
             </div>
             <div>
-              <SubmitFormButton type="submit" value="Book Your Consultation" />
+              <SubmitFormButton type="submit" value={t("button")} />
             </div>
           </Form>
         </FormContainer>

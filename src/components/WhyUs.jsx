@@ -43,7 +43,7 @@ const Card = styled.div`
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    border: none;
+    border-color: transparent;
   }
 
   @media (max-width: 600px) {
