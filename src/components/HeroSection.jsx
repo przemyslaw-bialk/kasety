@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   position: relative;
   height: 100vh;
   background-color: #070c39;
+  padding: 1rem;
 `;
 
 function HeroSection() {

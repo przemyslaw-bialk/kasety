@@ -39,6 +39,17 @@ const resources = {
       contact_heading: "Let's talk about <br/> your project",
       contact_subheading:
         "Drop us a line through the form below and we'll get back to you",
+      about_us: "About us",
+      about_us_subheading:
+        "Meet the team behind Tapes Transfer - professionals dedicated to preserving your audiovisual heritage with expertise and passion",
+      about_us_position: [
+        "Technical Director & Co-Founder",
+        "Producer & Co-Founder",
+      ],
+      about_us_text: [
+        "Award-winning editor with expertise in technical video workflows and digital preservation. Graduate of the Krakow Academy of Fine Arts, combining technical precision with deep understanding of image quality. Experienced in working with major TV broadcast stations. Responsible for the technical and operational side of the venture.",
+        "Experienced film producer and problem solver. Graduate of Polish National Film School, with experience in advertising agencies and film productions. Ensures every project is delivered at the highest level, on time and within budget.",
+      ],
     },
   },
   //------------------------------------------GERMAN----------------------------------//
@@ -79,6 +90,17 @@ const resources = {
       contact_heading: "Lassen Sie uns über Ihr Projekt sprechen",
       contact_subheading:
         "Schreiben Sie uns über das untenstehende Formular – wir melden uns zeitnah bei Ihnen",
+      about_us: "Über Uns",
+      about_us_subheading:
+        "Lernen Sie das Team hinter Tapes Transfer kennen - Profis, die sich mit Expertise und Leidenschaft der Erhaltung Ihres audiovisuellen Erbes widmen",
+      about_us_position: [
+        "Technischer Direktor & Mitgründer",
+        "Produzent & Mitgründer",
+      ],
+      about_us_text: [
+        "Preisgekrönter Editor mit Expertise in technischen Video-Workflows und digitaler Archivierung. Absolvent der Kunstakademie Krakau, verbindet technische Präzision mit tiefem Verständnis für Bildqualität. Erfahrung in der Arbeit mit großen TV-Sendern. Verantwortlich für die technische und operative Seite des Unternehmens.",
+        "Erfahrener Filmproduzent und Problemlöser. Absolvent der Polnischen Nationalen Filmhochschule mit Erfahrung in Werbeagenturen und Filmproduktionen. Stellt sicher, dass jedes Projekt auf höchstem Niveau, pünktlich und im Budget geliefert wird.",
+      ],
     },
   },
 };

@@ -2,6 +2,7 @@ import Header from "../ui/Header";
 import styled from "styled-components";
 import tomasz from "../assets/tomasz_bochniak.jpg";
 import zenon from "../assets/zenon_budyn.jpg";
+import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
   max-width: 1200px;
@@ -15,6 +16,7 @@ const SubHeading = styled.p`
 
   @media (max-width: 800px) {
     padding: 0 1rem;
+    margin-bottom: 3rem;
   }
 `;
 
@@ -80,36 +82,23 @@ const Position = styled.p`
 `;
 
 const OurTeam = () => {
+  const { t } = useTranslation();
   return (
     <Wrapper>
-      <Header>About Us</Header>
-      <SubHeading>
-        Meet the team behind Tapes Transfer - professionals dedicated to
-        preserving your audiovisual heritage with expertise and passion.
-      </SubHeading>
+      <Header>{t("about_us")}</Header>
+      <SubHeading>{t("about_us_subheading")}</SubHeading>
       <CardWrapper>
         <Card>
           <Avatar src={tomasz} alt="Tomasz Bochniak" />
           <Name>Tomasz Bochniak</Name>
-          <Position>Technical Director & Co-Founder</Position>
-          <p>
-            Award-winning editor with expertise in technical video workflows and
-            digital preservation. Graduate of the Krakow Academy of Fine Arts,
-            combining technical precision with deep understanding of image
-            quality. Experienced in working with major TV broadcast stations.
-            Responsible for the technical and operational side of the venture.
-          </p>
+          <Position>{t("about_us_position.0")}</Position>
+          <p>{t("about_us_text.0")}</p>
         </Card>
         <Card>
           <Avatar src={zenon} alt="Zenon Budyn" />
           <Name>Zenon Budyn</Name>
-          <Position>Producer & Co-Founder</Position>
-          <p>
-            Experienced film producer and problem solver. Graduate of Polish
-            National Film School, with experience in advertising agencies and
-            film productions. Ensures every project is delivered at the highest
-            level, on time and within budget.
-          </p>
+          <Position>{t("about_us_position.1")}</Position>
+          <p>{t("about_us_text.1")}</p>
         </Card>
       </CardWrapper>
     </Wrapper>
