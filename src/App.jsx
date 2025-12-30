@@ -13,6 +13,7 @@ import WhyUs from "./components/WhyUs";
 import { ContactUs } from "./components/ContactUs";
 
 import Footer from "./components/Footer";
+import OurTeam from "./components/OurTeam";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <OurNumbers />
 
         <CompanyService />
+        <OurTeam />
 
         <Accordion />
 
