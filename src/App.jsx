@@ -6,7 +6,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import HeroSection from "./components/HeroSection";
 
 import Accordion from "./components/Accordion";
-import CompanyService from "./components/CompanyService";
+
 import OurNumbers from "./components/OurNumbers";
 
 import WhyUs from "./components/WhyUs";
@@ -14,6 +14,7 @@ import { ContactUs } from "./components/ContactUs";
 
 import Footer from "./components/Footer";
 import OurTeam from "./components/OurTeam";
+import TechnicalCapabilities from "./components/TechnicalCapabilities";
 
 const App = () => {
   return (
@@ -21,15 +22,11 @@ const App = () => {
       <GlobalStyles />
       <I18nextProvider i18n={i18n}>
         <HeroSection />
-
         <WhyUs />
         <OurNumbers />
-
-        <CompanyService />
+        <TechnicalCapabilities />
         <OurTeam />
-
         <Accordion />
-
         <ContactUs />
         <Footer />
       </I18nextProvider>
