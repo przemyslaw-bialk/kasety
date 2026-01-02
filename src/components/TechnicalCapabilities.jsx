@@ -59,7 +59,7 @@ const Card = styled.div`
 
 const TechnicalCapabilities = () => {
   return (
-    <Outer>
+    <Outer id="capabilities">
       <SectionWrapper>
         <Header>TECHNICAL CAPABILITIES</Header>
         <CardWrapper>
