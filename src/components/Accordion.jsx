@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import Faq from "./FAQ";
 
 const Accordion = () => {
   const { t } = useTranslation();
@@ -14,6 +15,7 @@ const Accordion = () => {
 
   return (
     <div className="accordion">
+      <Faq />
       {accordionData.map(({ question, answer }, index) => (
         <div className="accordion-item" key={index}>
           <div className="accordion-title" onClick={() => toggle(index)}>

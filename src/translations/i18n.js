@@ -83,15 +83,36 @@ const resources = {
       ],
       faq: [
         {
-          question:
-            "What is Tapestransfer.com and what services does it offer?",
+          question: "What is your DVC PRO playback infrastructure?",
           answer:
-            "Tapestransfer.com provides broadcast-grade digitization, AI restoration, and archival services.",
+            "We maintain professional Panasonic DVC PRO decks (AJ-D750, AJ-HD1400) with regular alignment, calibration, and preventive maintenance. All playback equipment is monitored for optimal head life and signal integrity.",
         },
         {
-          question: "How does AI enhance digitization?",
+          question:
+            "How does AI-enhanced restoration preserve broadcast authenticity?",
           answer:
-            "AI improves image, color, and sound quality while preserving authenticity.",
+            "Our machine learning models are specifically trained to enhance rather than alter content. We preserve original framing, camera characteristics, and artistic intent while applying targeted improvements to noise, resolution, and color science—all within broadcast technical specifications.",
+        },
+        {
+          question: "Can you handle large-scale broadcast archive projects?",
+          answer:
+            "Absolutely. Our infrastructure supports projects from single tapes to complete broadcast archives (10,000+ hours). We provide project management, quality control protocols, and delivery scheduling that meets broadcast production timelines.",
+        },
+        {
+          question: "Do you serve institutional and government archival needs?",
+          answer:
+            "Yes. We provide specialized services for national archives, educational institutions, and government agencies, with security protocols, chain-of-custody documentation, and compliance with institutional preservation standards (FADGI, OAIS).",
+        },
+        {
+          question:
+            "What differentiates your service from consumer-grade digitization?",
+          answer:
+            "Professional broadcast equipment, maintained engineering infrastructure, SMPTE-compliant workflows, calibrated color science, AI restoration capabilities, and comprehensive post-production finishing—all delivered by experienced broadcast engineers and colorists.",
+        },
+        {
+          question: "How do clients initiate a project?",
+          answer:
+            "Contact us via our technical consultation form. We'll discuss format assessment, volume estimates, delivery specifications, quality control requirements, and timeline. Each project receives a detailed technical proposal and transparent pricing.",
         },
       ],
     },
@@ -178,15 +199,38 @@ const resources = {
       ],
       faq: [
         {
-          question:
-            "What is Tapestransfer.com and what services does it offer?",
+          question: "Was ist Ihre DVC PRO Wiedergabe-Infrastruktur?",
           answer:
-            "Tapestransfer.com provides broadcast-grade digitization, AI restoration, and archival services.",
+            "Wir unterhalten professionelle Panasonic DVC PRO Decks (AJ-D750, AJ-HD1400) mit regelmäßiger Ausrichtung, Kalibrierung und vorbeugender Wartung. Alle Wiedergabegeräte werden auf optimale Kopflebensdauer und Signalintegrität überwacht.",
         },
         {
-          question: "How does AI enhance digitization?",
+          question:
+            "Wie bewahrt die KI-gestützte Restaurierung die Broadcast-Authentizität?",
           answer:
-            "AI improves image, color, and sound quality while preserving authenticity.",
+            "Unsere maschinellen Lernmodelle sind speziell darauf trainiert, Inhalte zu verbessern, nicht zu verändern. Wir bewahren die ursprüngliche Bildkomposition, Kameraeigenschaften und künstlerische Absicht, während wir gezielte Verbesserungen bei Rauschen, Auflösung und Farbwissenschaft anwenden—alles innerhalb der technischen Broadcast-Spezifikationen.",
+        },
+        {
+          question:
+            "Können Sie großangelegte Broadcast-Archivprojekte handhaben?",
+          answer:
+            "Absolut. Unsere Infrastruktur unterstützt Projekte von einzelnen Bändern bis zu kompletten Broadcast-Archiven (10.000+ Stunden). Wir bieten Projektmanagement, Qualitätskontrollprotokolle und Lieferplanung, die Broadcast-Produktionszeitpläne erfüllt.",
+        },
+        {
+          question:
+            "Bedienen Sie institutionelle und staatliche Archivierungsbedürfnisse?",
+          answer:
+            "Ja. Wir bieten spezialisierte Dienstleistungen für Nationalarchive, Bildungseinrichtungen und Regierungsbehörden mit Sicherheitsprotokollen, Dokumentation der Beweiskette und Einhaltung institutioneller Erhaltungsstandards (FADGI, OAIS).",
+        },
+        {
+          question:
+            "Was unterscheidet Ihren Service von der Verbraucher-Digitalisierung?",
+          answer:
+            "Professionelle Broadcast-Ausrüstung, gewartete Engineering-Infrastruktur, SMPTE-konforme Workflows, kalibrierte Farbwissenschaft, KI-Restaurierungsfähigkeiten und umfassende Postproduktions-Finishing—alles geliefert von erfahrenen Broadcast-Ingenieuren und Coloristen.",
+        },
+        {
+          question: "Wie starten Kunden ein Projekt?",
+          answer:
+            "Kontaktieren Sie uns über unser technisches Beratungsformular. Wir besprechen Formatbewertung, Volumenabschätzungen, Lieferspezifikationen, Qualitätskontrollanforderungen und Zeitplan. Jedes Projekt erhält ein detailliertes technisches Angebot und transparente Preisgestaltung.",
         },
       ],
     },
