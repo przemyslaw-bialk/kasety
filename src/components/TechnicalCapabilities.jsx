@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "../ui/Header";
 import { IoMdArrowDropright } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
 const Outer = styled.div`
   background-color: #fafbfd;
@@ -58,135 +59,77 @@ const Card = styled.div`
 `;
 
 const TechnicalCapabilities = () => {
+  const { t } = useTranslation();
+  const technical_DVC = t("technical_DVC", { returnObjects: true });
+  const technical_AI = t("technical_AI", { returnObjects: true });
+  const technical_ASSET = t("technical_ASSET", { returnObjects: true });
+  const technical_POST = t("technical_POST", { returnObjects: true });
+
   return (
     <Outer id="capabilities">
       <SectionWrapper>
-        <Header>TECHNICAL CAPABILITIES</Header>
+        <Header>{t("technical_heading")}</Header>
         <CardWrapper>
           <Card>
             <div>
-              <h4>DVC PRO Digitization</h4>
-              <ul>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Professional Panasonic DVC PRO decks (AJ-D750, AJ-HD1400)
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Bit-accurate capture with SMPTE timecode preservation
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  1000+ hours monthly capacity with rapid scaling
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Full broadcast QC standards compliance
-                </li>
-              </ul>
+              <h4>{t("technical_subheading.0")}</h4>
+              {technical_DVC.map((item, i) => (
+                <ul key={i}>
+                  <li>
+                    <span>
+                      <IoMdArrowDropright />
+                    </span>
+                    {item}
+                  </li>
+                </ul>
+              ))}
             </div>
           </Card>
           <Card>
             <div>
-              <h4>DVC PRO Digitization</h4>
-              <ul>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Professional Panasonic DVC PRO decks (AJ-D750, AJ-HD1400)
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Bit-accurate capture with SMPTE timecode preservation
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  1000+ hours monthly capacity with rapid scaling
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Full broadcast QC standards compliance
-                </li>
-              </ul>
+              <h4>{t("technical_subheading.1")}</h4>
+              {technical_AI.map((item, i) => (
+                <ul key={i}>
+                  <li>
+                    <span>
+                      <IoMdArrowDropright />
+                    </span>
+                    {item}
+                  </li>
+                </ul>
+              ))}
             </div>
           </Card>
         </CardWrapper>
         <CardWrapper>
           <Card>
             <div>
-              <h4>DVC PRO Digitization</h4>
-              <ul>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Professional Panasonic DVC PRO decks (AJ-D750, AJ-HD1400)
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Bit-accurate capture with SMPTE timecode preservation
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  1000+ hours monthly capacity with rapid scaling
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Full broadcast QC standards compliance
-                </li>
-              </ul>
+              <h4>{t("technical_subheading.2")}</h4>
+              {technical_ASSET.map((item, i) => (
+                <ul key={i}>
+                  <li>
+                    <span>
+                      <IoMdArrowDropright />
+                    </span>
+                    {item}
+                  </li>
+                </ul>
+              ))}
             </div>
           </Card>
           <Card>
             <div>
-              <h4>DVC PRO Digitization</h4>
-              <ul>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Professional Panasonic DVC PRO decks (AJ-D750, AJ-HD1400)
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Bit-accurate capture with SMPTE timecode preservation
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  1000+ hours monthly capacity with rapid scaling
-                </li>
-                <li>
-                  <span>
-                    <IoMdArrowDropright />
-                  </span>
-                  Full broadcast QC standards compliance
-                </li>
-              </ul>
+              <h4>{t("technical_subheading.3")}</h4>
+              {technical_POST.map((item, i) => (
+                <ul key={i}>
+                  <li>
+                    <span>
+                      <IoMdArrowDropright />
+                    </span>
+                    {item}
+                  </li>
+                </ul>
+              ))}
             </div>
           </Card>
         </CardWrapper>
