@@ -20,6 +20,10 @@ const CardWrapper = styled.div`
   justify-content: center;
   gap: 3rem;
   margin-top: 5rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const Card = styled.div`

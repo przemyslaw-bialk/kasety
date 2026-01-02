@@ -81,6 +81,19 @@ const resources = {
         "All broadcast formats: ProRes, DNxHD/HR, IMF, AS-11 DPP, MXF",
         "Comprehensive QC reports and technical metadata",
       ],
+      faq: [
+        {
+          question:
+            "What is Tapestransfer.com and what services does it offer?",
+          answer:
+            "Tapestransfer.com provides broadcast-grade digitization, AI restoration, and archival services.",
+        },
+        {
+          question: "How does AI enhance digitization?",
+          answer:
+            "AI improves image, color, and sound quality while preserving authenticity.",
+        },
+      ],
     },
   },
   //------------------------------------------GERMAN----------------------------------//
@@ -162,6 +175,19 @@ const resources = {
         "Standardkonvertierung (Bildrate, Auflösung, Farbraum)",
         "Alle Broadcast-Formate: ProRes, DNxHD/HR, IMF, AS-11 DPP, MXF",
         "Umfassende QC-Berichte und technische Metadaten",
+      ],
+      faq: [
+        {
+          question:
+            "What is Tapestransfer.com and what services does it offer?",
+          answer:
+            "Tapestransfer.com provides broadcast-grade digitization, AI restoration, and archival services.",
+        },
+        {
+          question: "How does AI enhance digitization?",
+          answer:
+            "AI improves image, color, and sound quality while preserving authenticity.",
+        },
       ],
     },
   },

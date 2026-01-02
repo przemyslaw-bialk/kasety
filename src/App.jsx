@@ -27,6 +27,7 @@ const App = () => {
         <TechnicalCapabilities />
         <OurTeam />
         <Accordion />
+
         <ContactUs />
         <Footer />
       </I18nextProvider>

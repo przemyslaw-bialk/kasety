@@ -128,7 +128,7 @@ const MotionTextContainer = motion(TextContainer);
 
 function CompanyService() {
   return (
-    <StyledCompanyService id="services">
+    <StyledCompanyService>
       <ImageContainer
         imageUrl={photo1}
         variants={containerVariants}
@@ -137,7 +137,6 @@ function CompanyService() {
         viewport={{
           once: true,
         }}
-        id="test"
       >
         <p>Tape Digitalization</p>
       </ImageContainer>
@@ -151,7 +150,7 @@ function CompanyService() {
             once: true,
           }}
         >
-          <h4>Broadcast Workflow</h4>
+          <h4 id="services">Broadcast Workflow</h4>
           <TextParagraph>
             Leveraging industry-standard broadcast workflows ensures seamless
             digitization processes, adhering to quality standards and preserving
