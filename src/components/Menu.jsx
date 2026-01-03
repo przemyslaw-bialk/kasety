@@ -1,28 +1,33 @@
 import styled from "styled-components";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { MdOutlineMenu } from "react-icons/md";
-import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-const StyledMenu = styled.nav`
-  position: absolute;
+const MenuBar = styled.nav`
+  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  width: 100%;
+  transition: background 0.6s ease, opacity 0.6s ease;
+  z-index: 300;
+  background: ${({ scrolled }) =>
+    scrolled
+      ? "linear-gradient(to bottom, var(--color-brand-950), #001840)"
+      : "transparent"};
+`;
+
+const MenuInner = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
-  text-transform: uppercase;
-  z-index: 300;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
 
   @media (max-width: 900px) {
-    flex-direction: row;
-    justify-content: space-between;
     padding: 1.5rem;
   }
 
@@ -50,6 +55,8 @@ const WrapperMenu = styled.ul`
 `;
 
 const StyledMenuItem = styled.li`
+  margin-left: auto;
+
   a {
     color: var(--color-grey-0);
     font-size: 2rem;
@@ -85,18 +92,15 @@ const MobileMenu = styled.ul`
   list-style: none;
   background-color: rgba(7, 12, 57);
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 2rem 0;
+  inset: 0;
+  padding: 3rem 0;
   margin: 0;
   text-align: center;
   z-index: 350;
-  gap: 1.5rem;
+  gap: 2rem;
 
   li a {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--color-grey-0);
     text-decoration: none;
   }
@@ -112,37 +116,50 @@ const MobileMenu = styled.ul`
 
 function Menu() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // scroll for changing background color of menu
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", onScroll);
+  }, []);
   const { t } = useTranslation();
 
-  const menuItems = t("menu", { returnObjects: true });
+  const menuItems = t("menu", { returnObjects: true, defaultValue: [] });
 
   return (
     <>
-      <StyledMenu>
-        <h2>TapesTransfer.com</h2>
-        <WrapperMenu>
-          {menuItems.map((item, index) => (
-            <StyledMenuItem key={index}>
-              <a
-                href={
-                  index === 0
-                    ? "#services"
-                    : index === 1
-                    ? "#capabilities"
-                    : "#contact"
-                }
-              >
-                {item}
-              </a>
-            </StyledMenuItem>
-          ))}
-        </WrapperMenu>
+      <MenuBar scrolled={scrolled}>
+        <MenuInner>
+          <h2>TapesTransfer.com</h2>
 
-        <MenuLeft>
-          <LanguageSwitcher />
-          <HamburgerIcon onClick={() => setMenuOpen(!menuOpen)} />
-        </MenuLeft>
-      </StyledMenu>
+          <WrapperMenu>
+            {menuItems.map((item, index) => (
+              <StyledMenuItem key={index}>
+                <a
+                  href={
+                    index === 0
+                      ? "#services"
+                      : index === 1
+                      ? "#capabilities"
+                      : "#contact"
+                  }
+                >
+                  {item}
+                </a>
+              </StyledMenuItem>
+            ))}
+          </WrapperMenu>
+
+          <MenuLeft>
+            <LanguageSwitcher />
+            <HamburgerIcon onClick={() => setMenuOpen(true)} />
+          </MenuLeft>
+        </MenuInner>
+      </MenuBar>
 
       {menuOpen && (
         <MobileMenu>
@@ -151,8 +168,8 @@ function Menu() {
             style={{
               fontSize: "3rem",
               position: "absolute",
-              top: 10,
-              left: 10,
+              top: 20,
+              left: 20,
               cursor: "pointer",
               color: "white",
             }}

@@ -1,18 +1,21 @@
 import styled from "styled-components";
 import emailjs from "emailjs-com";
 import { useRef, useState } from "react";
-import contact from "../assets/photo1.jpg";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
 
 const FormWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, var(--color-brand-950), #001840);
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    background: #fff;
   }
 `;
 
@@ -107,13 +110,11 @@ const SubmitFormButton = styled.input`
 `;
 
 const BackgroundPhoto = styled.div`
-  position: relative;
-  background: url(${contact});
-  background-size: cover;
-  height: 100%;
+  background: linear-gradient(to bottom, var(--color-brand-950), #001840);
+
   padding: 1rem;
-  color: #e6e9d5;
-  text-align: center;
+  color: #e6e9ee;
+  text-align: left;
 
   & h4 {
     font-size: 4rem;
@@ -121,7 +122,7 @@ const BackgroundPhoto = styled.div`
     margin-top: 8rem;
 
     @media (max-width: 900px) {
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
   }
 
@@ -132,7 +133,7 @@ const BackgroundPhoto = styled.div`
   }
 
   & a {
-    color: #ccd2c6;
+    color: #e6e9ee;
     font-size: 1.5rem;
     margin-left: 1rem;
   }
@@ -144,7 +145,7 @@ const BackgroundPhoto = styled.div`
 
 const ContactTextLeft = styled.p`
   margin-top: 2rem;
-  color: #ccd2c6;
+  color: #e6e9ee;
 `;
 
 const PopupMessage = styled.div`
@@ -159,6 +160,11 @@ const PopupMessage = styled.div`
   opacity: ${(props) => (props.show ? "1" : "0")};
   visibility: ${(props) => (props.show ? "visible" : "hidden")};
   transition: opacity 0.5s, visibility 0.5s;
+`;
+
+const Outer = styled.div`
+  background: linear-gradient(to bottom, var(--color-brand-950), #001840);
+  padding: 2rem 1rem;
 `;
 
 export const ContactUs = () => {
@@ -196,10 +202,12 @@ export const ContactUs = () => {
   };
 
   return (
-    <div id="contact">
+    <Outer id="contact">
       <FormWrapper>
         <BackgroundPhoto>
-          <h4>technical consultation</h4>
+          <h4>
+            technical <br /> consultation
+          </h4>
           <p>Let{"'"}s discuss your digitization project</p>
           <ContactTextLeft>
             Complete the form below and our technical team will respond within
@@ -254,6 +262,6 @@ export const ContactUs = () => {
         </FormContainer>
       </FormWrapper>
       <PopupMessage show={popup}>Message sent successfully!</PopupMessage>
-    </div>
+    </Outer>
   );
 };

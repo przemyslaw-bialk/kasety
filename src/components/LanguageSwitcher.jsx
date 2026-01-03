@@ -22,7 +22,7 @@ const Switcher = styled.div`
   gap: 1rem;
   position: absolute;
   top: 2;
-  right: 1rem;
+  right: 2rem;
 `;
 
 function LanguageSwitcher() {
