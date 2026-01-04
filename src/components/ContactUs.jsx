@@ -109,9 +109,8 @@ const SubmitFormButton = styled.input`
   }
 `;
 
-const BackgroundPhoto = styled.div`
+const ContactLeft = styled.div`
   background: linear-gradient(to bottom, var(--color-brand-950), #001840);
-
   padding: 1rem;
   color: #e6e9ee;
   text-align: left;
@@ -139,7 +138,7 @@ const BackgroundPhoto = styled.div`
   }
 
   @media (max-width: 900px) {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -204,7 +203,7 @@ export const ContactUs = () => {
   return (
     <Outer id="contact">
       <FormWrapper>
-        <BackgroundPhoto>
+        <ContactLeft>
           <h4>
             <Trans i18nKey="contact_left_heading" />
           </h4>
@@ -218,7 +217,7 @@ export const ContactUs = () => {
               contact@tapestransfer.com
             </a>
           </p>
-        </BackgroundPhoto>
+        </ContactLeft>
         <FormContainer>
           <Form onSubmit={handleSubmit} ref={form}>
             <h3>{t("contact_us")}</h3>

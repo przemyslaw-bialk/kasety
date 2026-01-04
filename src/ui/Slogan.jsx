@@ -49,7 +49,7 @@ const CenteredContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
 `;
@@ -83,6 +83,13 @@ const StyledArrow = styled(ImArrowDown)`
   margin-top: 5rem;
   z-index: 150;
   animation: ${fadeIn} 2s ease-in-out;
+
+  @media (max-width: 600px) {
+    font-size: 5rem;
+  }
+  @media (max-width: 435px) {
+    display: none;
+  }
 `;
 
 const Title = styled.h1`
@@ -95,6 +102,10 @@ const Title = styled.h1`
   line-height: 1;
   max-width: 900px;
   animation: ${fadeIn} 2s ease-in-out;
+
+  @media (max-width: 800px) {
+    font-size: 6.5rem;
+  }
 `;
 
 const Features = styled.div`
@@ -112,6 +123,17 @@ const FeatureItem = styled.p`
   &:not(:last-child)::after {
     content: "|";
     margin-left: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 500px) {
+    font-size: 1.2rem;
+    margin-left: 0.2rem;
   }
 `;
 

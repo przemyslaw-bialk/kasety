@@ -31,6 +31,10 @@ const AccordionQuestion = styled.button`
   @media (max-width: 800px) {
     font-size: 1.4rem;
   }
+  @media (max-width: 445px) {
+    padding: 0;
+    font-size: 1.2rem;
+  }
 `;
 
 const AccordionAnswerWrapper = styled.div`
