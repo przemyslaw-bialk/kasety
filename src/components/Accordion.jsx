@@ -33,8 +33,8 @@ const AccordionQuestion = styled.button`
     font-size: 1.4rem;
   }
   @media (max-width: 445px) {
-    padding: 0;
-    font-size: 1.2rem;
+    padding: 1rem;
+    text-align: left;
   }
 `;
 

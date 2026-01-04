@@ -41,7 +41,6 @@ function HeroSection() {
         Your browser does not support the video tag.
       </BackgroundVideo>
       <Menu />
-
       <Slogan />
     </Wrapper>
   );

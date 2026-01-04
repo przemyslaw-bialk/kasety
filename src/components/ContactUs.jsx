@@ -42,6 +42,11 @@ const FormContainer = styled.div`
     padding: 3rem;
     font-weight: 700;
     line-height: 1;
+
+    @media (max-width: 500px) {
+      width: 140px;
+      height: 140px;
+    }
   }
 `;
 

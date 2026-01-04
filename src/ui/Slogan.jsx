@@ -40,7 +40,7 @@ const StyledSlogan = styled.h1`
   border-left: 2px solid #e6b905;
 
   @media (max-width: 900px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -73,7 +73,8 @@ const Button = styled.a`
   }
 
   @media (max-width: 900px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    padding: 1rem 2rem;
   }
 `;
 
@@ -104,7 +105,8 @@ const Title = styled.h1`
   animation: ${fadeIn} 2s ease-in-out;
 
   @media (max-width: 800px) {
-    font-size: 6.5rem;
+    font-size: 4.5rem;
+    margin-top: 2rem;
   }
 `;
 
@@ -117,6 +119,10 @@ const Features = styled.div`
   font-size: 3rem;
   color: var(--color-grey-200);
   animation: ${fadeIn} 2s ease-in-out;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
 `;
 
 const FeatureItem = styled.p`
@@ -129,10 +135,9 @@ const FeatureItem = styled.p`
     font-size: 2rem;
   }
   @media (max-width: 700px) {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   @media (max-width: 500px) {
-    font-size: 1.2rem;
     margin-left: 0.2rem;
   }
 `;
