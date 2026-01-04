@@ -206,12 +206,11 @@ export const ContactUs = () => {
       <FormWrapper>
         <BackgroundPhoto>
           <h4>
-            technical <br /> consultation
+            <Trans i18nKey="contact_left_heading" />
           </h4>
-          <p>Let{"'"}s discuss your digitization project</p>
+          <p>{t("contact_left_heading_subheading")}</p>
           <ContactTextLeft>
-            Complete the form below and our technical team will respond within
-            24 hours
+            <p>{t("contact_left_text")}</p>
           </ContactTextLeft>
           <p>
             <span>Contact: </span>

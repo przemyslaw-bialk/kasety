@@ -12,10 +12,7 @@ const MenuBar = styled.nav`
   width: 100%;
   transition: background 0.6s ease, opacity 0.6s ease;
   z-index: 300;
-  background: ${({ scrolled }) =>
-    scrolled
-      ? "linear-gradient(to bottom, var(--color-brand-950), #001840)"
-      : "transparent"};
+  background: ${({ scrolled }) => (scrolled ? "#00183E" : "transparent")};
 `;
 
 const MenuInner = styled.div`

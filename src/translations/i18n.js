@@ -39,6 +39,11 @@ const resources = {
       contact_heading: "Let's talk about <br/> your project",
       contact_subheading:
         "Drop us a line through the form below and we'll get back to you",
+      contact_left_heading: "Technical <br/> Consultation",
+      contact_left_heading_subheading:
+        "Let's discuss your digitization project",
+      contact_left_text:
+        "Complete the form below and our technical team will respond within 24 hours",
       about_us: "About us",
       about_us_subheading:
         "Meet the team behind Tapes Transfer - professionals dedicated to preserving your audiovisual heritage with expertise and passion",
@@ -155,6 +160,11 @@ const resources = {
       contact_heading: "Lassen Sie uns über Ihr Projekt sprechen",
       contact_subheading:
         "Schreiben Sie uns über das untenstehende Formular – wir melden uns zeitnah bei Ihnen",
+      contact_left_heading: "Technische <br/> Beratung",
+      contact_left_heading_subheading:
+        "Lassen Sie uns Ihr Digitalisierungsprojekt besprechen",
+      contact_left_text:
+        "Füllen Sie das Formular unten aus und unser technisches Team wird innerhalb von 24 Stunden antworten",
       about_us: "Über Uns",
       about_us_subheading:
         "Lernen Sie das Team hinter Tapes Transfer kennen - Profis, die sich mit Expertise und Leidenschaft der Erhaltung Ihres audiovisuellen Erbes widmen",
