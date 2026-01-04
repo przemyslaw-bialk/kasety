@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Header from "../ui/Header";
 import { IoMdArrowDropright } from "react-icons/io";
 import { useTranslation } from "react-i18next";
+import FadeInWhenVisible from "./FadeInWhenVisible";
 
 const Outer = styled.div`
   background-color: #fafbfd;
@@ -72,69 +73,79 @@ const TechnicalCapabilities = () => {
   return (
     <Outer id="capabilities">
       <SectionWrapper>
-        <Header>{t("technical_heading")}</Header>
+        <FadeInWhenVisible>
+          <Header>{t("technical_heading")}</Header>
+        </FadeInWhenVisible>
         <CardWrapper>
           <Card>
-            <div>
-              <h4>{t("technical_subheading.0")}</h4>
-              {technical_DVC.map((item, i) => (
-                <ul key={i}>
-                  <li>
-                    <span>
-                      <IoMdArrowDropright />
-                    </span>
-                    {item}
-                  </li>
-                </ul>
-              ))}
-            </div>
+            <FadeInWhenVisible>
+              <div>
+                <h4>{t("technical_subheading.0")}</h4>
+                {technical_DVC.map((item, i) => (
+                  <ul key={i}>
+                    <li>
+                      <span>
+                        <IoMdArrowDropright />
+                      </span>
+                      {item}
+                    </li>
+                  </ul>
+                ))}
+              </div>
+            </FadeInWhenVisible>
           </Card>
           <Card>
-            <div>
-              <h4>{t("technical_subheading.1")}</h4>
-              {technical_AI.map((item, i) => (
-                <ul key={i}>
-                  <li>
-                    <span>
-                      <IoMdArrowDropright />
-                    </span>
-                    {item}
-                  </li>
-                </ul>
-              ))}
-            </div>
+            <FadeInWhenVisible>
+              <div>
+                <h4>{t("technical_subheading.1")}</h4>
+                {technical_AI.map((item, i) => (
+                  <ul key={i}>
+                    <li>
+                      <span>
+                        <IoMdArrowDropright />
+                      </span>
+                      {item}
+                    </li>
+                  </ul>
+                ))}
+              </div>
+            </FadeInWhenVisible>
           </Card>
         </CardWrapper>
         <CardWrapper>
           <Card>
-            <div>
-              <h4>{t("technical_subheading.2")}</h4>
-              {technical_ASSET.map((item, i) => (
-                <ul key={i}>
-                  <li>
-                    <span>
-                      <IoMdArrowDropright />
-                    </span>
-                    {item}
-                  </li>
-                </ul>
-              ))}
-            </div>
+            <FadeInWhenVisible>
+              <div>
+                <h4>{t("technical_subheading.2")}</h4>
+                {technical_ASSET.map((item, i) => (
+                  <ul key={i}>
+                    <li>
+                      <span>
+                        <IoMdArrowDropright />
+                      </span>
+                      {item}
+                    </li>
+                  </ul>
+                ))}
+              </div>
+            </FadeInWhenVisible>
           </Card>
           <Card>
-            <div>
-              <h4>{t("technical_subheading.3")}</h4>
-              {technical_POST.map((item, i) => (
-                <ul key={i}>
-                  <li>
-                    <span>
-                      <IoMdArrowDropright />
-                    </span>
-                    {item}
-                  </li>
-                </ul>
-              ))}
-            </div>
+            <FadeInWhenVisible>
+              <div>
+                <h4>{t("technical_subheading.3")}</h4>
+                {technical_POST.map((item, i) => (
+                  <ul key={i}>
+                    <li>
+                      <span>
+                        <IoMdArrowDropright />
+                      </span>
+                      {item}
+                    </li>
+                  </ul>
+                ))}
+              </div>
+            </FadeInWhenVisible>
           </Card>
         </CardWrapper>
       </SectionWrapper>

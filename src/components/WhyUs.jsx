@@ -5,6 +5,7 @@ import { BsStars } from "react-icons/bs";
 import { FiDatabase } from "react-icons/fi";
 import { LiaPhotoVideoSolid } from "react-icons/lia";
 import { useTranslation } from "react-i18next";
+import FadeInWhenVisible from "./FadeInWhenVisible";
 
 const Wrapper = styled.div`
   margin-top: 15rem;
@@ -98,18 +99,22 @@ function WhyUs() {
 
   return (
     <>
-      <Header>{t("why_us_header")}</Header>
-      <Wrapper>
-        {WHY_US_CARDS.map(({ icon: Icon, color, textKey, bodyKey }, i) => (
-          <Card key={i}>
-            <CardLogo style={{ color }}>
-              <Icon />
-            </CardLogo>
-            <CardHeader>{t(textKey)}</CardHeader>
-            <CardText>{t(bodyKey)}</CardText>
-          </Card>
-        ))}
-      </Wrapper>
+      <FadeInWhenVisible>
+        <Header>{t("why_us_header")}</Header>
+      </FadeInWhenVisible>
+      <FadeInWhenVisible>
+        <Wrapper>
+          {WHY_US_CARDS.map(({ icon: Icon, color, textKey, bodyKey }, i) => (
+            <Card key={i}>
+              <CardLogo style={{ color }}>
+                <Icon />
+              </CardLogo>
+              <CardHeader>{t(textKey)}</CardHeader>
+              <CardText>{t(bodyKey)}</CardText>
+            </Card>
+          ))}
+        </Wrapper>
+      </FadeInWhenVisible>
     </>
   );
 }

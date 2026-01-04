@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Faq from "./FAQ";
+import FadeInWhenVisible from "./FadeInWhenVisible";
 
 const Wrapper = styled.div`
   max-width: 1200px;
@@ -66,7 +67,9 @@ const Accordion = () => {
 
   return (
     <Wrapper>
-      <Faq />
+      <FadeInWhenVisible>
+        <Faq />
+      </FadeInWhenVisible>
       {accordionData.map(({ question, answer }, index) => (
         <AccordionItem key={index}>
           <AccordionQuestion onClick={() => toggle(index)}>

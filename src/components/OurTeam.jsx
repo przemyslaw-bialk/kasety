@@ -3,6 +3,7 @@ import styled from "styled-components";
 import tomasz from "../assets/tomasz_bochniak.jpg";
 import zenon from "../assets/zenon_budyn.jpg";
 import { useTranslation } from "react-i18next";
+import FadeInWhenVisible from "./FadeInWhenVisible";
 
 const Wrapper = styled.div`
   max-width: 1200px;
@@ -85,21 +86,28 @@ const OurTeam = () => {
   const { t } = useTranslation();
   return (
     <Wrapper>
-      <Header>{t("about_us")}</Header>
-      <SubHeading>{t("about_us_subheading")}</SubHeading>
+      <FadeInWhenVisible>
+        <Header>{t("about_us")}</Header>
+        <SubHeading>{t("about_us_subheading")}</SubHeading>
+      </FadeInWhenVisible>
+
       <CardWrapper>
-        <Card>
-          <Avatar src={tomasz} alt="Tomasz Bochniak" />
-          <Name>Tomasz Bochniak</Name>
-          <Position>{t("about_us_position.0")}</Position>
-          <p>{t("about_us_text.0")}</p>
-        </Card>
-        <Card>
-          <Avatar src={zenon} alt="Zenon Budyn" />
-          <Name>Zenon Budyn</Name>
-          <Position>{t("about_us_position.1")}</Position>
-          <p>{t("about_us_text.1")}</p>
-        </Card>
+        <FadeInWhenVisible>
+          <Card>
+            <Avatar src={tomasz} alt="Tomasz Bochniak" />
+            <Name>Tomasz Bochniak</Name>
+            <Position>{t("about_us_position.0")}</Position>
+            <p>{t("about_us_text.0")}</p>
+          </Card>
+        </FadeInWhenVisible>
+        <FadeInWhenVisible>
+          <Card>
+            <Avatar src={zenon} alt="Zenon Budyn" />
+            <Name>Zenon Budyn</Name>
+            <Position>{t("about_us_position.1")}</Position>
+            <p>{t("about_us_text.1")}</p>
+          </Card>
+        </FadeInWhenVisible>
       </CardWrapper>
     </Wrapper>
   );

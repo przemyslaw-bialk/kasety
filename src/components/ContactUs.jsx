@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
+import FadeInWhenVisible from "./FadeInWhenVisible";
 
 const FormWrapper = styled.div`
   display: grid;
@@ -203,21 +204,23 @@ export const ContactUs = () => {
   return (
     <Outer id="contact">
       <FormWrapper>
-        <ContactLeft>
-          <h4>
-            <Trans i18nKey="contact_left_heading" />
-          </h4>
-          <p>{t("contact_left_heading_subheading")}</p>
-          <ContactTextLeft>
-            <p>{t("contact_left_text")}</p>
-          </ContactTextLeft>
-          <p>
-            <span>Contact: </span>
-            <a href="mailto:contact@tapestransfer.com">
-              contact@tapestransfer.com
-            </a>
-          </p>
-        </ContactLeft>
+        <FadeInWhenVisible>
+          <ContactLeft>
+            <h4>
+              <Trans i18nKey="contact_left_heading" />
+            </h4>
+            <p>{t("contact_left_heading_subheading")}</p>
+            <ContactTextLeft>
+              <p>{t("contact_left_text")}</p>
+            </ContactTextLeft>
+            <p>
+              <span>Contact: </span>
+              <a href="mailto:contact@tapestransfer.com">
+                contact@tapestransfer.com
+              </a>
+            </p>
+          </ContactLeft>
+        </FadeInWhenVisible>
         <FormContainer>
           <Form onSubmit={handleSubmit} ref={form}>
             <h3>{t("contact_us")}</h3>
