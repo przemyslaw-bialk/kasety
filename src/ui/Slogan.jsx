@@ -40,7 +40,7 @@ const StyledSlogan = styled.h1`
   border-left: 2px solid #e6b905;
 
   @media (max-width: 900px) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 `;
 
